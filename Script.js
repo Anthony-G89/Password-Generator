@@ -1,50 +1,90 @@
-var characterRange= document.getElementById('characterRange');
-var characternumber= document.getElementById('characternumber');
-var includeUppercaseElement = document.getElementById('includeUppercase');
-var includenumberElement = document.getElementById('includenumbers');
-var incoudesymbolsElement= document.getElementById('includesymbols')
+// Assignment Code
+var generateBtn = document.querySelector("#generate");
 
-var form= document.getElementById('password-generator');
 
-var upperCase_Char_Codes= arrayFromLowToHigh(65,90);
-var upperLower_Char_Codes= arrayFromLowToHigh(97,122);
-var Numbers_Char_Codes= arrayFromLowToHigh(48,57);
-var Symbols_Char_Codes= arrayFromLowToHigh(33,47).concat(
-    arrayFromLowToHigh(58, 64)
-).concat(
-    arrayFromLowToHigh(91,96).concat(
-        arrayFromLowToHigh(123,126)
-    )
-);
+var lowerCase= ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+var upperCase= ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+var Numbers= [0,1,2,3,4,5,6,7,8,9,]
+var Symbols= ['!','@','#','$','%','^','&','*','(',')','_','+'];
 
-characterRange .addEventListener('input', synccharacterRange);
-characterNumber .addEventListener('input', syncCharacterNumber);
 
-form.addEventListener('submit',e =>{
-    e.preventDefault()
-    var characternumber = characternumber.value
-    var includeUppercase= includeUppercaseElement.checked
-    var includenumber= includenumberElement.checked
-    var includesymbols= includesymbolsElement.checked
-    var password= generatePassword(characternumber, includeUppercase, includelowercase, includenumber, includesymbols)
-})
+var length= confirm('Password must be 8-128 characters.');
+var lowerCaseQuestion= confirm('Do you want a lower case character.');
+var upperCaseQuestion= confirm('Do you want a upper case character.');
+var numberQuestion= confirm('Do you want a Number.');
+var SymbolsQuestion= confirm('Do you want to add a symbol.');
 
-function generatePassword(characternumber, includeUppercase, includelowercase, includenumber, includesymbols){
-    console.log(upperCase_Char_Codes);
+if (lowerCaseQuestion){
+    alert('Lower case will be added'); //yes
+}
+else if (upperCaseQuestion){
+    alert('Do you want to add a upper case character.'); //no
+}
+
+if(upperCaseQuestion){
+    alert('An uppercase will be added.'); //yes
+}
+else if (SymbolsQuestion){
+    alert(' do you want to add a number') //no
+}
+
+if (numberQuestion){
+    alert('A number will be added.');
+}
+else if (SymbolsQuestion){
+    alert
 
 }
 
-function arrayFromLowToHigh(low, high){
-    var array= []
-    for (var i=low; i <= high; i++){
-        array.push(i)
-
-    }
-    return array
+if (SymbolsQuestion){
+    alert('A symbol will be added.');
 }
 
-function syncCharacterNumber(e){
-    var value= e.target.value
-    characterRange.value= value
-    characternumber.value= value
+function generatePassword(){
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  return "this is my password"
 }
+
+
+
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+
+  copyBtn.removeAttribute("disabled");
+  copyBtn.focus();
+}
+
+function copyToClipboard() {
+  // BONUS 
+}
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
+// BONUS EVENT LISTENER
