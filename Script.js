@@ -11,14 +11,16 @@ function generatePassword() {
 
   var length = prompt('How many character would you like.');
 
+  if(length < 8){
+    alert("Password needs to be at least 8 characters");
 
+    return "";
+  }
 
   var lowerCaseQuestion = confirm('Do you want a lowercase character.');
   var upperCaseQuestion = confirm('Do you want a uppercase character.');
   var numberQuestion = confirm('Do you want a Number.');
   var SymbolsQuestion = confirm('Do you want to add a symbol.');
-
-
   
   if (lowerCaseQuestion) {
     possibleCharacters = possibleCharacters.concat(lowerCase);
@@ -36,8 +38,6 @@ function generatePassword() {
   }
 
   // for loop to the length of that varible
-
-
   for (var i = 0; i < length; i++) {
 
     var randomIndex = Math.floor(Math.random() * possibleCharacters.length);
