@@ -1,5 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var copyBtn= document.querySelector("#copy1");
+
 
 function generatePassword() {
   var newPassword = [];
@@ -48,8 +50,6 @@ function generatePassword() {
   return newPassword.join("");
 }
 
-
-
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -63,13 +63,14 @@ function writePassword() {
 
 function copyToClipboard() {
   // BONUS 
-  var copyText= document.getElementById("#copy1");
+  var copyText= document.querySelector("#password");
   copyText.select();
   document.execCommand("copy");
-  alert("copied to clipboard" + copyText.value);
+  alert("Password is copied to clipboard");
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
 // BONUS EVENT LISTENER
+copyBtn.addEventListener("click",copyToClipboard);
