@@ -63,17 +63,13 @@ function writePassword() {
 
 function copyToClipboard() {
   // BONUS 
+  var copyText= document.getElementById("#copy1");
+  copyText.select();
+  document.execCommand("copy");
+  alert("copied to clipboard" + copyText.value);
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
 // BONUS EVENT LISTENER
-//for (let i = 0; i < 10; i++) {
-  //var CA_rps = ["r", "p", "s"];
-//var rv = Math.floor(Math.random()*CA_rps.length);
-//cChoice=CA_rps[rv];
-//console.log(cChoice);
-
-
-//}
