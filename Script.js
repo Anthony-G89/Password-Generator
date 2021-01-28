@@ -3,6 +3,9 @@ var generateBtn = document.querySelector("#generate");
 var copyBtn= document.querySelector("#copy1");
 
 
+
+
+
 function generatePassword() {
   var newPassword = [];
   var possibleCharacters = [];
