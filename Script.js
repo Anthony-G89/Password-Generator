@@ -1,10 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var copyBtn= document.querySelector("#copy1");
-
-
-
-
+var copyBtn = document.querySelector("#copy1");
 
 function generatePassword() {
   var newPassword = [];
@@ -16,7 +12,7 @@ function generatePassword() {
 
   var length = prompt('How many character would you like.');
 
-  if(length < 8){
+  if (length < 8) {
     alert("Password needs to be at least 8 characters");
 
     return "";
@@ -26,7 +22,7 @@ function generatePassword() {
   var upperCaseQuestion = confirm('Do you want a uppercase character.');
   var numberQuestion = confirm('Do you want a Number.');
   var SymbolsQuestion = confirm('Do you want to add a symbol.');
-  
+
   if (lowerCaseQuestion) {
     possibleCharacters = possibleCharacters.concat(lowerCase);
   }
@@ -48,7 +44,7 @@ function generatePassword() {
     var randomIndex = Math.floor(Math.random() * possibleCharacters.length);
     newPassword.push(possibleCharacters[randomIndex]);
   }
-  
+
 
   return newPassword.join("");
 }
@@ -57,7 +53,7 @@ function generatePassword() {
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-  
+
   passwordText.value = password;
 
   copyBtn.removeAttribute("disabled");
@@ -66,7 +62,7 @@ function writePassword() {
 
 function copyToClipboard() {
   // BONUS 
-  var copyText= document.querySelector("#password");
+  var copyText = document.querySelector("#password");
   copyText.select();
   document.execCommand("copy");
   alert("Password is copied to clipboard");
@@ -76,4 +72,4 @@ function copyToClipboard() {
 generateBtn.addEventListener("click", writePassword);
 
 // BONUS EVENT LISTENER
-copyBtn.addEventListener("click",copyToClipboard);
+copyBtn.addEventListener("click", copyToClipboard);
