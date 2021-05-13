@@ -25,7 +25,7 @@ N/A
 
 ## Usage
 ---
-![home](./images/final-passwordGenerator.png)
+![home](./images/final-passwordG.png)
 
 ## Credit
 ```
